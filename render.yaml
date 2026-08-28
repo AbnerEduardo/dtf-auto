@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: dtf-auto-pro
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    region: ohio
+    branch: main
+    healthCheckPath: /api/auth
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: DATABASE_URL
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ASAAS_API_KEY
+        sync: false
+      - key: ASAAS_ENVIRONMENT
+        value: sandbox
+      - key: ASAAS_WEBHOOK_SECRET
+        sync: false

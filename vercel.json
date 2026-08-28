@@ -1,0 +1,10 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "functions": {
+    "src/app/api/queue/render-300dpi/route.ts": {
+      "maxDuration": 60,
+      "memory": 1024
+    }
+  }
+}
